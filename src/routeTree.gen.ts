@@ -9,38 +9,212 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SignupRouteImport } from './routes/signup'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as HotelsRouteImport } from './routes/hotels'
+import { Route as BookingsRouteImport } from './routes/bookings'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdminIndexRouteImport } from './routes/admin.index'
+import { Route as HotelsIdRouteImport } from './routes/hotels.$id'
+import { Route as AdminUsersRouteImport } from './routes/admin.users'
+import { Route as AdminRoomsRouteImport } from './routes/admin.rooms'
+import { Route as AdminHotelsRouteImport } from './routes/admin.hotels'
+import { Route as HotelsIdBookRouteImport } from './routes/hotels.$id.book'
 
+const SignupRoute = SignupRouteImport.update({
+  id: '/signup',
+  path: '/signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HotelsRoute = HotelsRouteImport.update({
+  id: '/hotels',
+  path: '/hotels',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookingsRoute = BookingsRouteImport.update({
+  id: '/bookings',
+  path: '/bookings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminIndexRoute = AdminIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AdminRoute,
+} as any)
+const HotelsIdRoute = HotelsIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => HotelsRoute,
+} as any)
+const AdminUsersRoute = AdminUsersRouteImport.update({
+  id: '/users',
+  path: '/users',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminRoomsRoute = AdminRoomsRouteImport.update({
+  id: '/rooms',
+  path: '/rooms',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminHotelsRoute = AdminHotelsRouteImport.update({
+  id: '/hotels',
+  path: '/hotels',
+  getParentRoute: () => AdminRoute,
+} as any)
+const HotelsIdBookRoute = HotelsIdBookRouteImport.update({
+  id: '/book',
+  path: '/book',
+  getParentRoute: () => HotelsIdRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRouteWithChildren
+  '/bookings': typeof BookingsRoute
+  '/hotels': typeof HotelsRouteWithChildren
+  '/login': typeof LoginRoute
+  '/signup': typeof SignupRoute
+  '/admin/hotels': typeof AdminHotelsRoute
+  '/admin/rooms': typeof AdminRoomsRoute
+  '/admin/users': typeof AdminUsersRoute
+  '/hotels/$id': typeof HotelsIdRouteWithChildren
+  '/admin/': typeof AdminIndexRoute
+  '/hotels/$id/book': typeof HotelsIdBookRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/bookings': typeof BookingsRoute
+  '/hotels': typeof HotelsRouteWithChildren
+  '/login': typeof LoginRoute
+  '/signup': typeof SignupRoute
+  '/admin/hotels': typeof AdminHotelsRoute
+  '/admin/rooms': typeof AdminRoomsRoute
+  '/admin/users': typeof AdminUsersRoute
+  '/hotels/$id': typeof HotelsIdRouteWithChildren
+  '/admin': typeof AdminIndexRoute
+  '/hotels/$id/book': typeof HotelsIdBookRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRouteWithChildren
+  '/bookings': typeof BookingsRoute
+  '/hotels': typeof HotelsRouteWithChildren
+  '/login': typeof LoginRoute
+  '/signup': typeof SignupRoute
+  '/admin/hotels': typeof AdminHotelsRoute
+  '/admin/rooms': typeof AdminRoomsRoute
+  '/admin/users': typeof AdminUsersRoute
+  '/hotels/$id': typeof HotelsIdRouteWithChildren
+  '/admin/': typeof AdminIndexRoute
+  '/hotels/$id/book': typeof HotelsIdBookRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/admin'
+    | '/bookings'
+    | '/hotels'
+    | '/login'
+    | '/signup'
+    | '/admin/hotels'
+    | '/admin/rooms'
+    | '/admin/users'
+    | '/hotels/$id'
+    | '/admin/'
+    | '/hotels/$id/book'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/bookings'
+    | '/hotels'
+    | '/login'
+    | '/signup'
+    | '/admin/hotels'
+    | '/admin/rooms'
+    | '/admin/users'
+    | '/hotels/$id'
+    | '/admin'
+    | '/hotels/$id/book'
+  id:
+    | '__root__'
+    | '/'
+    | '/admin'
+    | '/bookings'
+    | '/hotels'
+    | '/login'
+    | '/signup'
+    | '/admin/hotels'
+    | '/admin/rooms'
+    | '/admin/users'
+    | '/hotels/$id'
+    | '/admin/'
+    | '/hotels/$id/book'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRoute: typeof AdminRouteWithChildren
+  BookingsRoute: typeof BookingsRoute
+  HotelsRoute: typeof HotelsRouteWithChildren
+  LoginRoute: typeof LoginRoute
+  SignupRoute: typeof SignupRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/signup': {
+      id: '/signup'
+      path: '/signup'
+      fullPath: '/signup'
+      preLoaderRoute: typeof SignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hotels': {
+      id: '/hotels'
+      path: '/hotels'
+      fullPath: '/hotels'
+      preLoaderRoute: typeof HotelsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bookings': {
+      id: '/bookings'
+      path: '/bookings'
+      fullPath: '/bookings'
+      preLoaderRoute: typeof BookingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,21 +222,98 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/': {
+      id: '/admin/'
+      path: '/'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AdminIndexRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/hotels/$id': {
+      id: '/hotels/$id'
+      path: '/$id'
+      fullPath: '/hotels/$id'
+      preLoaderRoute: typeof HotelsIdRouteImport
+      parentRoute: typeof HotelsRoute
+    }
+    '/admin/users': {
+      id: '/admin/users'
+      path: '/users'
+      fullPath: '/admin/users'
+      preLoaderRoute: typeof AdminUsersRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/rooms': {
+      id: '/admin/rooms'
+      path: '/rooms'
+      fullPath: '/admin/rooms'
+      preLoaderRoute: typeof AdminRoomsRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/hotels': {
+      id: '/admin/hotels'
+      path: '/hotels'
+      fullPath: '/admin/hotels'
+      preLoaderRoute: typeof AdminHotelsRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/hotels/$id/book': {
+      id: '/hotels/$id/book'
+      path: '/book'
+      fullPath: '/hotels/$id/book'
+      preLoaderRoute: typeof HotelsIdBookRouteImport
+      parentRoute: typeof HotelsIdRoute
+    }
   }
 }
 
+interface AdminRouteChildren {
+  AdminHotelsRoute: typeof AdminHotelsRoute
+  AdminRoomsRoute: typeof AdminRoomsRoute
+  AdminUsersRoute: typeof AdminUsersRoute
+  AdminIndexRoute: typeof AdminIndexRoute
+}
+
+const AdminRouteChildren: AdminRouteChildren = {
+  AdminHotelsRoute: AdminHotelsRoute,
+  AdminRoomsRoute: AdminRoomsRoute,
+  AdminUsersRoute: AdminUsersRoute,
+  AdminIndexRoute: AdminIndexRoute,
+}
+
+const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
+
+interface HotelsIdRouteChildren {
+  HotelsIdBookRoute: typeof HotelsIdBookRoute
+}
+
+const HotelsIdRouteChildren: HotelsIdRouteChildren = {
+  HotelsIdBookRoute: HotelsIdBookRoute,
+}
+
+const HotelsIdRouteWithChildren = HotelsIdRoute._addFileChildren(
+  HotelsIdRouteChildren,
+)
+
+interface HotelsRouteChildren {
+  HotelsIdRoute: typeof HotelsIdRouteWithChildren
+}
+
+const HotelsRouteChildren: HotelsRouteChildren = {
+  HotelsIdRoute: HotelsIdRouteWithChildren,
+}
+
+const HotelsRouteWithChildren =
+  HotelsRoute._addFileChildren(HotelsRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRoute: AdminRouteWithChildren,
+  BookingsRoute: BookingsRoute,
+  HotelsRoute: HotelsRouteWithChildren,
+  LoginRoute: LoginRoute,
+  SignupRoute: SignupRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-  }
-}
