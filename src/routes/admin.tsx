@@ -16,9 +16,9 @@ export const Route = createFileRoute("/admin")({
 
 const nav = [
   { to: "/admin", label: "Overview", icon: LayoutDashboard, exact: true },
-  { to: "/admin/hotels", label: "Hotels", icon: Building2 },
-  { to: "/admin/rooms", label: "Rooms", icon: DoorOpen },
-  { to: "/admin/users", label: "Users", icon: Users },
+  { to: "/admin/hotels", label: "Hotels", icon: Building2, exact: false },
+  { to: "/admin/rooms", label: "Rooms", icon: DoorOpen, exact: false },
+  { to: "/admin/users", label: "Users", icon: Users, exact: false },
 ] as const;
 
 function AdminLayout() {
