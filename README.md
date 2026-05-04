@@ -360,6 +360,6 @@ This project is suitable for:
 
 ---
 
-**Built with ❤️ by a Senior Frontend Developer**
+**Built with ❤️ by a Vivek Rana**
 
 **Status**: ✅ Production Ready | **Version**: 1.0.0 | **Last Updated**: April 2026
