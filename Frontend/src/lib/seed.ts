@@ -4,7 +4,7 @@ export const seedUsers: User[] = [
   {
     id: "u_admin",
     username: "admin",
-    email: "admin@stayhaven.com",
+    email: "admin@royalstayinn.com",
     password: "admin123",
     role: "admin",
     country: "USA",
@@ -15,7 +15,7 @@ export const seedUsers: User[] = [
   {
     id: "u_demo",
     username: "demo",
-    email: "demo@stayhaven.com",
+    email: "demo@royalstayinn.com",
     password: "demo123",
     role: "user",
     country: "USA",
@@ -111,10 +111,10 @@ export const seedHotels: Hotel[] = [
     address: "Caldera Cliff Road, Oia",
     distance: "200m from beach",
     photos: [
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200",
-      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200",
-      "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=1200",
-      "https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=1200",
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&auto=format&q=80",
+      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&auto=format&q=80",
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1200&auto=format&q=80",
+      "https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=1200&auto=format&q=80",
     ],
     title: "Cliffside escape with infinity pools",
     description:
@@ -133,9 +133,9 @@ export const seedHotels: Hotel[] = [
     address: "412 Mountain Ridge",
     distance: "1.2km from gondola",
     photos: [
-      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1200",
-      "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=1200",
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200",
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1200&auto=format&q=80",
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&auto=format&q=80",
+      "https://images.unsplash.com/photo-1518602164578-cd0074062767?w=1200&auto=format&q=80",
     ],
     title: "Alpine retreat with skiing concierge",
     description:
@@ -154,9 +154,9 @@ export const seedHotels: Hotel[] = [
     address: "2-1-1 Shibuya",
     distance: "300m from Shibuya station",
     photos: [
-      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1200",
-      "https://images.unsplash.com/photo-1455587734955-081b22074882?w=1200",
-      "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=1200",
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1200&auto=format&q=80",
+      "https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=1200&auto=format&q=80",
+      "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=1200&auto=format&q=80",
     ],
     title: "Design hotel in the heart of Shibuya",
     description:
@@ -175,9 +175,9 @@ export const seedHotels: Hotel[] = [
     address: "Palmeraie 14",
     distance: "20min from Medina",
     photos: [
-      "https://images.unsplash.com/photo-1540541338287-41700207dee6?w=1200",
-      "https://images.unsplash.com/photo-1602002418816-5c0aeef426aa?w=1200",
-      "https://images.unsplash.com/photo-1568084680786-a84f91d1153c?w=1200",
+      "https://images.unsplash.com/photo-1540541338287-41700207dee6?w=1200&auto=format&q=80",
+      "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=1200&auto=format&q=80",
+      "https://images.unsplash.com/photo-1587874522487-f9b0e51b86c2?w=1200&auto=format&q=80",
     ],
     title: "Private villa in the Palmeraie",
     description:
@@ -196,9 +196,9 @@ export const seedHotels: Hotel[] = [
     address: "Tunnel Mountain Rd",
     distance: "5min from town",
     photos: [
-      "https://images.unsplash.com/photo-1518602164578-cd0074062767?w=1200",
-      "https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=1200",
-      "https://images.unsplash.com/photo-1542718610-a1d656d1884c?w=1200",
+      "https://images.unsplash.com/photo-1518602164578-cd0074062767?w=1200&auto=format&q=80",
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&auto=format&q=80",
+      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200&auto=format&q=80",
     ],
     title: "Off-grid cabins in the Rockies",
     description:
@@ -217,9 +217,9 @@ export const seedHotels: Hotel[] = [
     address: "Rua das Flores 42",
     distance: "Old town center",
     photos: [
-      "https://images.unsplash.com/photo-1551776235-dde6d482980b?w=1200",
-      "https://images.unsplash.com/photo-1587874522487-f9b0e51b86c2?w=1200",
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200",
+      "https://images.unsplash.com/photo-1551776235-dde6d482980b?w=1200&auto=format&q=80",
+      "https://images.unsplash.com/photo-1587874522487-f9b0e51b86c2?w=1200&auto=format&q=80",
+      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200&auto=format&q=80",
     ],
     title: "A tile-clad boutique in Alfama",
     description:
